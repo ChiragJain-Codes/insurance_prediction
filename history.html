@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History - Insurance Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #666;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+        .buttonGroup {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 40px;
+        }
+        .buttonGroup button {
+            font-size: 1.0rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .buttonGroup button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Prediction History - Insurance Prediction Tool</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/project">Predict</a>
+    <a href="/history">History</a>
+</nav>
+
+<div class="container">
+    <h2>Insurance Charge Predictions History</h2>
+    
+    {% if historical_data %}
+    <table>
+        <thead>
+            <tr>
+                <th>Date & Time</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>BMI</th>
+                <th>Children</th>
+                <th>Smoker</th>
+                <th>Region</th>
+                <th>Predicted Charges</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prediction in historical_data %}
+            <tr>
+                <td>{{ prediction.timestamp }}</td>
+                <td>{{ prediction.age }}</td>
+                <td>{{ prediction.sex }}</td>
+                <td>{{ prediction.bmi }}</td>
+                <td>{{ prediction.children }}</td>
+                <td>{{ prediction.smoker }}</td>
+                <td>{{ prediction.region }}</td>
+                <td>${{ "%.2f"|format(prediction.predicted_charges) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="no-data">
+        <h3>No prediction history available</h3>
+        <p>Start making predictions to see your history here!</p>
+    </div>
+    {% endif %}
+</div>
+
+<div class="buttonGroup">
+    <a href="/project"><button>Make New Prediction</button></a>
+    <a href="/contact"><button>Contact Us</button></a>
+    <a href="/about"><button>About Us</button></a>
+</div>
+
+<footer>
+    <p>&copy; 2024 Insurance Prediction Tool. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

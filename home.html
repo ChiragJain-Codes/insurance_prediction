@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            height: 100vh;
+            overflow-y: hidden;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            
+            background-color: #666;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            color:black;
+            height: 50px;
+            align-items: center;
+    
+        }
+        .buttonGroup {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            position: relative;
+            margin-top: 40px;
+        }
+        .buttonGroup button {
+            font-size: 1.0rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .crop-img {
+            width: 100vw;
+            z-index: -2;
+            position:absolute;
+            size: cover;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .bg{
+            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80'); /* Insurance theme: family, home, security */
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .items{
+            margin-left:680px;
+            font-size: larger;
+        }
+
+        a{
+            text-decoration: none;
+                        color: black;
+
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to the Insurance Charge Prediction Tool!</h1>
+</header>
+
+<!-- <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav> -->
+<div class="bg">
+    <section>
+        <div class="items">
+            <a href="/about" class="about"> About the Insurance Project</a>
+        </div>
+    </section>
+
+        <footer>
+        <p>&copy; 2024 My Simple Homepage. All rights reserved.</p>
+    </footer>
+    <div>
+        <div class="buttonGroup">
+            <a href="/project"><button>Predict Charges</button></a>
+            <a href="/contact"><button>Contact us</button></a>
+            <a href="/history"><button>Prediction History</button></a>
+        
+            <!-- <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-weed-farm-v4-d6b58888-41f3-4161-8520-2ffc28a58291.jpg?w=1500&h=1000&crop=1" alt="" class="crop-img"> -->
+    
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

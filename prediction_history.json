@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2025-07-28 12:30:30",
+    "age": 45,
+    "sex": "male",
+    "bmi": 60.0,
+    "children": 1,
+    "smoker": "yes",
+    "region": "northeast",
+    "predicted_charges": 46998.81
+  },
+  {
+    "timestamp": "2025-07-28 12:30:35",
+    "age": 45,
+    "sex": "male",
+    "bmi": 60.0,
+    "children": 1,
+    "smoker": "yes",
+    "region": "northeast",
+    "predicted_charges": 46998.81
+  },
+  {
+    "timestamp": "2025-07-28 12:30:42",
+    "age": 45,
+    "sex": "male",
+    "bmi": 60.0,
+    "children": 1,
+    "smoker": "yes",
+    "region": "northeast",
+    "predicted_charges": 46998.81
+  }
+]
